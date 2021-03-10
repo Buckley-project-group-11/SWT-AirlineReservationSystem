@@ -501,9 +501,9 @@ public class addCustomer extends javax.swing.JInternalFrame {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    public static javax.swing.JButton jButton1;
+    public static javax.swing.JButton jButton2;
+    public static javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -518,13 +518,38 @@ public class addCustomer extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JRadioButton r1;
     private javax.swing.JRadioButton r2;
-    private javax.swing.JTextArea txtaddress;
-    private javax.swing.JTextField txtcontact;
-    private javax.swing.JTextField txtfirstname;
+    private static javax.swing.JTextArea txtaddress;
+    private static javax.swing.JTextField txtcontact;
+    private static javax.swing.JTextField txtfirstname;
     private javax.swing.JLabel txtid;
-    private javax.swing.JTextField txtlastname;
-    private javax.swing.JTextField txtnic;
-    private javax.swing.JTextField txtpassport;
+    private static javax.swing.JTextField txtlastname;
+    private static javax.swing.JTextField txtnic;
+    private static javax.swing.JTextField txtpassport;
     private javax.swing.JLabel txtphoto;
     // End of variables declaration//GEN-END:variables
+
+
+    public static JTextArea getTxtaddress() {
+        return txtaddress;
+    }
+
+    public static JTextField getTxtcontact() {
+        return txtcontact;
+    }
+
+    public static JTextField getTxtfirstname() {
+        return txtfirstname;
+    }
+
+    public static JTextField getTxtlastname() {
+        return txtlastname;
+    }
+
+    public static JTextField getTxtnic() {
+        return txtnic;
+    }
+
+    public static JTextField getTxtpassport() {
+        return txtpassport;
+    }
 }
