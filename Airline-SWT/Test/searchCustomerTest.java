@@ -9,12 +9,16 @@ import static org.junit.Assert.fail;
 // This is for negative testing (exception testing)
 public class searchCustomerTest {
 
+
   // NOT working yet
   // Trying to set the txtPhoto label to null but I think
   // we may need to make the byte[] userimage null or the
   // String path null to test it. Not sure what I am doing to be honest.
   @Test
   public void testButton1SQLException() throws InterruptedException {
+
+    String path=null;
+    byte[] userimage=null;
     // Create instance of the searchCustomer class
     searchCustomer search = new searchCustomer();
     search.setVisible(true);
@@ -26,9 +30,8 @@ public class searchCustomerTest {
       findText.getText();
     }
     // Access the label used to display image
-    JLabel photo = (JLabel) search.getFrameIcon();
+    path.isEmpty();
     // Enter an invalid input (no image path) to trigger SQLException
-    photo.setIcon(null);
     // Give program 2 seconds to accept text
     sleep(2000);
     // Click button1 (Browse) to attempt a search with the invalid input
