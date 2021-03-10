@@ -146,6 +146,9 @@ public class addflightTest {
         //This button's action stores the newly created flight into the database.
         addflight.jButton1.doClick();
 
+        //This button is pressed for coverage.
+        addflight.jButton2.doClick();
+
     }
 
 
