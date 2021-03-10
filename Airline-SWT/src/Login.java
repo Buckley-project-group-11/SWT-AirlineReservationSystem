@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JOptionPane;
+import javax.swing.*;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -136,7 +136,7 @@ public class Login extends javax.swing.JFrame {
         {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
-                con = DriverManager.getConnection("jdbc:mysql://localhost/airline","root","");
+                con = DriverManager.getConnection("jdbc:mysql://localhost:/airline","root","");
                 pst = con.prepareStatement("select * from user where username = ? and password = ?");
                  pst.setString(1, username);
                  pst.setString(2, password);
@@ -188,6 +188,8 @@ public class Login extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
+
+
     /**
      * @param args the command line arguments
      */
@@ -221,15 +223,24 @@ public class Login extends javax.swing.JFrame {
                 new Login().setVisible(true);
             }
         });
+
+    }
+    public static JTextField getUsername(){
+        return txtuser;
+
+    }
+    public static JTextField getPassword(){
+        return txtpass;
     }
 
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    public static javax.swing.JButton jButton1;
+    public static javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField txtpass;
-    private javax.swing.JTextField txtuser;
+    public static javax.swing.JPasswordField txtpass;
+    public static javax.swing.JTextField txtuser;
     // End of variables declaration//GEN-END:variables
 }
