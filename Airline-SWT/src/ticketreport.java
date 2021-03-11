@@ -87,9 +87,15 @@ PreparedStatement pst;
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
+        System.out.println(this.isVisible());
         this.hide();
+        isHidden = true;
+        System.out.println("Ticket report has been hidden.");
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    public static Boolean getVisibility(){
+        return isHidden;
+    }
 
     public void LoadData()
     {
@@ -158,8 +164,11 @@ PreparedStatement pst;
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    // Need to be made public static so test class can access
+    public static javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
+    public static boolean isButton1Working;
+    public static boolean isHidden;
     // End of variables declaration//GEN-END:variables
 }

@@ -14,11 +14,6 @@ public class searchCustomerTest {
   // we may need to make the byte[] userimage null or the
   // String path null to test it. Not sure what I am doing to be honest.
   @Test
-  /* This test was constructed to test if the customer was valid, then
-  * testing if the image file exists. The customer must be valid in order
-  * for this test to work and the path must not exist since this is being
-  * tested using the negative testing technique.
-  */
   public void testButton1IOException() throws InterruptedException {
 
     // Create instance of the searchCustomer class
@@ -60,11 +55,6 @@ public class searchCustomerTest {
   // So basically, search for CS001, then insert ABC into the contact and hit
   // update
   @Test
-  /* This test was constructed to test if the customer was valid, then
-   * testing if the contact text can be updated using letters.
-   * The customer must be valid in order for this test to work. The customer
-   * contact text will not update if it is letters.
-   */
   public void testButton2SQLException() throws InterruptedException {
     // Create instance of the searchCustomer class
     searchCustomer search = new searchCustomer();
@@ -94,12 +84,18 @@ public class searchCustomerTest {
     System.out.println("Button2 SQLException test should pass.");
   }
 
+  @Test
+  public void testButton3() {
+    searchCustomer search = new searchCustomer();
+    search.setVisible(true);
+    search.jButton3.doClick();
+    Boolean isHidden = search.getVisibility();
+    System.out.println("Button1 test should pass");
+    Assert.assertTrue(isHidden);
+  }
+
   // Tests the SQL exception try/catch of Button4 (Find)
   @Test
-  /* This test was constructed to test if the customer was valid, then
-   * testing if the customer exists. The customer file is 2 letters followed
-   * by 3 numbers.
-   */
   public void testButton4SQLException() throws InterruptedException {
     // Create instance of the searchCustomer class
     searchCustomer search = new searchCustomer();

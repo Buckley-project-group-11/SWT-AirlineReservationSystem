@@ -11,46 +11,22 @@ public class ticketreportTest {
 
   // Tests SQLException for Button 1 (Book)
   @Test
-  public void testButton1SQLException() throws InterruptedException {
+  /* This test was constructed to test if the customer was valid, then
+   * testing if the customer exists. The customer file is 2 letters followed
+   * by 3 numbers.
+   */
+  public void testButton1() {
     // Create instance of the searchCustomer class
-    ticket myTicket = new ticket();
-    myTicket.setVisible(true);
-    // Access the textfield used to search
-    JTextField priceText = (JTextField) myTicket.getPriceText();
-    // Enter an invalid input (ABC) to trigger SQLException
-    priceText.setText("ABC");
-    // Give program 2 seconds to accept text
-    sleep(2000);
-    // Click button1 (Book) to attempt to book the flight with the invalid input
-    myTicket.jButton1.doClick();
-    // In ticket SQLException catch, button1IsSQLThrown set to true
-    // This was work around since I wasn't able to get
-    // jButton1ActionPerformed to throw an exception for some reason
-    // If invalid input, and SQL not thrown, test fails
-    // If invalid input, and SQL thrown, test passes
-    Assert.assertTrue(myTicket.button1IsSQLThrown);
-    System.out.println("Button1 SQLException test should pass.");
-  }
+    ticketreport report = new ticketreport();
+    report.setVisible(true);
 
-  // Testing invalid values entered into Customer ID
-  @Test
-  public void testCustomerIDInput() throws InterruptedException {
-    // Acceptable values
-    Pattern pattern = Pattern.compile("[A-Za-z]");
-    ticket myTicket = new ticket();
-    myTicket.setVisible(true);
-    // Get the textfield
-    JTextField customerIDText = (JTextField) myTicket.getCustomerIDText();
-    // Give textfield invalid value
-    customerIDText.setText("♥");
-    // Give it 2 seconds to accept the value
-    sleep(2000);
-    customerIDText.postActionEvent();
-    // Look for the invalid value within the list of valid values
-    Matcher match = pattern.matcher(customerIDText.getText());
-    // If it fails to find it, then the test passes
-    boolean result = match.find();
-    Assert.assertTrue(!result);
+    report.jButton1.doClick();
+    Boolean isHidden =report.getVisibility();
+
+    System.out.println("CANCEL WORKED!");
+
+    Assert.assertTrue(isHidden);
+
   }
 
 }
