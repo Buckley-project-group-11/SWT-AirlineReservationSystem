@@ -18,10 +18,7 @@ import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
-import javax.swing.JFileChooser;
-import javax.swing.JOptionPane;
-import javax.swing.JTextField;
+import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 
 
@@ -33,6 +30,8 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 
 public class searchCustomer extends javax.swing.JInternalFrame {
+
+
 
   /**
    * Creates new form addCustomer
@@ -358,6 +357,11 @@ public class searchCustomer extends javax.swing.JInternalFrame {
     // TODO add your handling code here:
   }//GEN-LAST:event_txtpassportActionPerformed
 
+  public static Component getPhotoText(){
+    JLabel photoFrame = txtphoto;
+    return photoFrame;
+  }
+
   private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
     // TODO add your handling code here:
 
@@ -391,6 +395,7 @@ public class searchCustomer extends javax.swing.JInternalFrame {
 
     } catch (IOException ex) {
       Logger.getLogger(addCustomer.class.getName()).log(Level.SEVERE, null, ex);
+      button1IsIOExceptionThrown = true;
     }
 
 
@@ -631,9 +636,9 @@ public class searchCustomer extends javax.swing.JInternalFrame {
   private javax.swing.JTextField txtlastname;
   private javax.swing.JTextField txtnic;
   private javax.swing.JTextField txtpassport;
-  private javax.swing.JLabel txtphoto;
+  public static javax.swing.JLabel txtphoto;
   // used to tell test class if SQLException is thrown
-  public static boolean button1IsSQLThrown;
+  public static boolean button1IsIOExceptionThrown;
   public static boolean button2IsSQLThrown;
   public static boolean button4IsSQLThrown;
   // End of variables declaration//GEN-END:variables
