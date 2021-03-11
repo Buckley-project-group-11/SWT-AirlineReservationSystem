@@ -230,9 +230,15 @@ public class userCreation extends javax.swing.JInternalFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
+        System.out.println(this.isVisible());
         this.hide();
+        isHidden = true;
+        System.out.println("Ticket report has been hidden.");
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    public static Boolean getVisibility(){
+        return isHidden;
+    }
     
      public void autoID()
     {
@@ -285,7 +291,7 @@ public class userCreation extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    public static javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -298,5 +304,6 @@ public class userCreation extends javax.swing.JInternalFrame {
     private javax.swing.JLabel txtuserid;
     private javax.swing.JTextField txtusername;
     public static boolean button1IsSQLThrown;
+    public static boolean isHidden;
     // End of variables declaration//GEN-END:variables
 }

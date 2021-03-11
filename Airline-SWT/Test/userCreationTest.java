@@ -30,5 +30,15 @@ public class userCreationTest {
     System.out.println("Button1 SQLException test should pass.");
   }
 
+  @Test
+  public void testButton2() {
+    // Create instance of the searchCustomer class
+    userCreation cancel = new userCreation();
+    cancel.setVisible(true);
+    cancel.jButton2.doClick();
+    Boolean isHidden =cancel.getVisibility();
+    System.out.println("Button2 test should pass.");
+    Assert.assertTrue(isHidden);
 
+  }
 }
