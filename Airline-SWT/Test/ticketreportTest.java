@@ -11,12 +11,8 @@ public class ticketreportTest {
 
   // Tests SQLException for Button 1 (Book)
   @Test
-  /* This test was constructed to test if the customer was valid, then
-   * testing if the customer exists. The customer file is 2 letters followed
-   * by 3 numbers.
-   */
   public void testButton1() {
-    // Create instance of the searchCustomer class
+    // Create instance of the ticketreport class
     ticketreport report = new ticketreport();
     report.setVisible(true);
     report.jButton1.doClick();
