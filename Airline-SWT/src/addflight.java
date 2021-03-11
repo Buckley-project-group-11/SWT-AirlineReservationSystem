@@ -333,8 +333,15 @@ public class addflight extends javax.swing.JInternalFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
 
+        System.out.println(this.isVisible());
         this.hide();
+        isHidden = true;
+        System.out.println("Add flight has been hidden.");
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    public static Boolean getVisibility(){
+        return isHidden;
+    }
 
     public static Component getTxtName(){
         JTextField x = txtflightname;
@@ -388,5 +395,6 @@ public class addflight extends javax.swing.JInternalFrame {
     public static javax.swing.JLabel txtflightid;
     public static javax.swing.JTextField txtflightname;
     public static javax.swing.JComboBox<String> txtsource;
+    public static boolean isHidden;
     // End of variables declaration//GEN-END:variables
 }

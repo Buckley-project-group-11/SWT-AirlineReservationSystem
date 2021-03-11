@@ -495,15 +495,22 @@ public class addCustomer extends javax.swing.JInternalFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
-        
+
+        System.out.println(this.isVisible());
         this.hide();
+        isHidden = true;
+        System.out.println("Add customer has been hidden.");
     }//GEN-LAST:event_jButton3ActionPerformed
 
+    public static Boolean getVisibility(){
+        return isHidden;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.JButton jButton1;
     public static javax.swing.JButton jButton2;
     public static javax.swing.JButton jButton3;
+    public static boolean isHidden;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;

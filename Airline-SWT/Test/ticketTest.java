@@ -52,4 +52,14 @@ public class ticketTest {
     Assert.assertTrue(!result);
   }
 
+  @Test
+  public void testButton2() {
+    ticket create = new ticket();
+    create.setVisible(true);
+    create.jButton2.doClick();
+    Boolean isHidden = create.getVisibility();
+    System.out.println("Button2 test should pass.");
+    Assert.assertTrue(isHidden);
+  }
+
 }

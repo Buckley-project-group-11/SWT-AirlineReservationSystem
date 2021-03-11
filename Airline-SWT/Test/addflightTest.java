@@ -151,7 +151,17 @@ public class addflightTest {
 
     }
 
+    @Test
+    public void testButton2() {
+        // Create instance of the searchCustomer class
+        addflight details = new addflight();
+        details.setVisible(true);
+        details.jButton2.doClick();
+        Boolean isHidden =details.getVisibility();
+        System.out.println("Button2 test should pass.");
+        Assert.assertTrue(isHidden);
 
+    }
 
 }
 

@@ -484,17 +484,11 @@ public class searchCustomer extends javax.swing.JInternalFrame {
 
   }//GEN-LAST:event_jButton2ActionPerformed
 
-  public static Boolean getVisibility(){
-    return isHidden;
-  }
 
-  private static Boolean isHidden;
+
   private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
     // TODO add your handling code here:
 
-    this.hide();
-    isHidden = true;
-    System.out.println("Search Customer has been hidden");
   }//GEN-LAST:event_jButton3ActionPerformed
 
   // Getter for the textfield used to search for customers

@@ -19,12 +19,9 @@ public class ticketreportTest {
     // Create instance of the searchCustomer class
     ticketreport report = new ticketreport();
     report.setVisible(true);
-
     report.jButton1.doClick();
     Boolean isHidden =report.getVisibility();
-
-    System.out.println("CANCEL WORKED!");
-
+    System.out.println("Button1 test should pass.");
     Assert.assertTrue(isHidden);
 
   }

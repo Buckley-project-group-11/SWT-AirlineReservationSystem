@@ -80,7 +80,15 @@ public class addCustomerTest {
         addCustomer.jButton3.doClick();
     }
 
-
+    @Test
+    public void testButton3() {
+        addCustomer create = new addCustomer();
+        create.setVisible(true);
+        create.jButton3.doClick();
+        Boolean isHidden = create.getVisibility();
+        System.out.println("Button3 test should pass.");
+        Assert.assertTrue(isHidden);
+    }
 
     @Parameterized.Parameters
     //This creates the different fields need to create a new customer and automates the the inputs into the method above

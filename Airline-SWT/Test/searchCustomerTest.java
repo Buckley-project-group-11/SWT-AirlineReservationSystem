@@ -84,15 +84,6 @@ public class searchCustomerTest {
     System.out.println("Button2 SQLException test should pass.");
   }
 
-  @Test
-  public void testButton3() {
-    searchCustomer search = new searchCustomer();
-    search.setVisible(true);
-    search.jButton3.doClick();
-    Boolean isHidden = search.getVisibility();
-    System.out.println("Button1 test should pass");
-    Assert.assertTrue(isHidden);
-  }
 
   // Tests the SQL exception try/catch of Button4 (Find)
   @Test

@@ -685,17 +685,24 @@ public class ticket extends javax.swing.JInternalFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
 
+        System.out.println(this.isVisible());
         this.hide();
+        isHidden = true;
+        System.out.println("Ticket has been hidden.");
 
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    public static Boolean getVisibility(){
+        return isHidden;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel flightname;
     private javax.swing.JLabel flightno;
     // Changed to public static for the test class
     public static javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    // Changed to public static for the test class
+    public static javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
@@ -732,5 +739,6 @@ public class ticket extends javax.swing.JInternalFrame {
     private javax.swing.JLabel txttotal;
     // Changed to public static for the test class
     public static boolean button1IsSQLThrown;
+    public static boolean isHidden;
     // End of variables declaration//GEN-END:variables
 }
