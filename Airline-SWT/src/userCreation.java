@@ -1,4 +1,5 @@
 
+import java.awt.Component;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -10,6 +11,7 @@ import java.text.SimpleDateFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -167,6 +169,12 @@ public class userCreation extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    // Getter used by test class to access the first name textfield
+    public static Component getFNameText (){
+        JTextField textField = txtfirstname;
+        return textField;
+    }
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         
@@ -196,6 +204,9 @@ public class userCreation extends javax.swing.JInternalFrame {
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(addflight.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SQLException ex) {
+            // Set to true so test class can see if SQLException occured
+            button1IsSQLThrown = true;
+            System.out.println("Button1 SQLException caught");
             Logger.getLogger(addflight.class.getName()).log(Level.SEVERE, null, ex);
         }
            
@@ -273,7 +284,7 @@ public class userCreation extends javax.swing.JInternalFrame {
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    public static javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -281,10 +292,11 @@ public class userCreation extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField txtfirstname;
+    private static javax.swing.JTextField txtfirstname;
     private javax.swing.JTextField txtlastname;
     private javax.swing.JPasswordField txtpassword;
     private javax.swing.JLabel txtuserid;
     private javax.swing.JTextField txtusername;
+    public static boolean button1IsSQLThrown;
     // End of variables declaration//GEN-END:variables
 }

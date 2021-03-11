@@ -11,10 +11,10 @@ public class ticketTest {
   // Tests SQLException for Button 1 (Book)
   @Test
   public void testButton1SQLException() throws InterruptedException {
-    // Create instance of the searchCustomer class
+    // Create instance of the ticket class
     ticket myTicket = new ticket();
     myTicket.setVisible(true);
-    // Access the textfield used to search
+    // Access the textfield used to fill in the price
     JTextField priceText = (JTextField) myTicket.getPriceText();
     // Enter an invalid input (ABC) to trigger SQLException
     priceText.setText("ABC");

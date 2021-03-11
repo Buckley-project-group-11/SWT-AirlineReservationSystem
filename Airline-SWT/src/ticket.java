@@ -611,12 +611,13 @@ public class ticket extends javax.swing.JInternalFrame {
 
     }//GEN-LAST:event_txtseatsStateChanged
 
+    // Getter used by test class to access the customer id textfield
     public static Component getCustomerIDText(){
         JTextField textField = txtcustid;
         return textField;
     }
 
-    // Getter for price textfield
+    // Getter used by test class to access the price textfield
     public static Component getPriceText(){
         JTextField textField = txtprice;
         return textField;
@@ -692,6 +693,7 @@ public class ticket extends javax.swing.JInternalFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel flightname;
     private javax.swing.JLabel flightno;
+    // Changed to public static for the test class
     public static javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -715,17 +717,20 @@ public class ticket extends javax.swing.JInternalFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JComboBox<String> txtclass;
+    // Changed to static for the getter used by test class
     private static javax.swing.JTextField txtcustid;
     private javax.swing.JComboBox<String> txtdepart;
     private javax.swing.JLabel txtdept;
     private javax.swing.JLabel txtfirstname;
     private javax.swing.JLabel txtlastname;
     private javax.swing.JLabel txtpassport;
+    // Changed to static for the getter used by test class
     private static javax.swing.JTextField txtprice;
     private javax.swing.JSpinner txtseats;
     private javax.swing.JComboBox<String> txtsource;
     private javax.swing.JLabel txtticketno;
     private javax.swing.JLabel txttotal;
+    // Changed to public static for the test class
     public static boolean button1IsSQLThrown;
     // End of variables declaration//GEN-END:variables
 }
