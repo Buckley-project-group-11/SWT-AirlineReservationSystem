@@ -15,6 +15,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import static java.lang.Thread.sleep;
 import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.*;
 
 
 public class addflightTest {
@@ -126,22 +127,30 @@ public class addflightTest {
                 arrTimeResult,
                 chargeResult};
 
-        boolean allTestPassed = false;
+        boolean[]  allTestPassed = {true, true, true, true, true, true, true};
 
         /*
         Each test input is tested for its validity. If a test input is false, then the loop will break and the
         test will fail.
          */
-        for (int i = 0; i < testResults.length; i++) {
-            if (testResults[i] == true) {
-                allTestPassed = true;
-            } else {
-                allTestPassed = false;
-                break;
-            }
-        }
+       // for (int i = 0; i < testResults.length; i++) {
+       //     if (testResults[i] == true) {
+       //         allTestPassed = true;
+        //    } else {
+        //        allTestPassed = false;
+       //         break;
+       //     }
+     //   }
         //Assert determines the validity of the test.
-        Assert.assertTrue(allTestPassed);
+     //   Assert.assertTrue(allTestPassed);
+        
+        
+        //Creates the mock object which will store the test results.
+        List flightAddMock = mock(List.class);
+        //Add the test results to the mock object.
+        flightAddMock.add(testResults);
+        //Verifies if the actual output equates the expected output.
+        verify(flightAddMock).add(allTestPassed);
 
         //This button's action stores the newly created flight into the database.
         addflight.jButton1.doClick();
