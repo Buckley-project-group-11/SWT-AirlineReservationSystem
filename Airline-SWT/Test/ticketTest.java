@@ -1,5 +1,9 @@
 import static java.lang.Thread.sleep;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
+import java.util.LinkedList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.JTextField;
@@ -27,7 +31,14 @@ public class ticketTest {
     // jButton1ActionPerformed to throw an exception for some reason
     // If invalid input, and SQL not thrown, test fails
     // If invalid input, and SQL thrown, test passes
-    Assert.assertTrue(myTicket.button1IsSQLThrown);
+    Boolean isSQLThrown = myTicket.button1IsSQLThrown;
+
+    // Integration Testing - Mock
+    List searchCustomerMock = mock(List.class);
+    searchCustomerMock.add(isSQLThrown);
+    verify(searchCustomerMock).add(true);
+
+    Assert.assertTrue(isSQLThrown);
     System.out.println("Button1 SQLException test should pass.");
   }
 
@@ -49,6 +60,12 @@ public class ticketTest {
     Matcher match = pattern.matcher(customerIDText.getText());
     // If it fails to find it, then the test passes
     boolean result = match.find();
+
+    // Integration Testing - Mock
+    List searchCustomerMock = mock(List.class);
+    searchCustomerMock.add(!result);
+    verify(searchCustomerMock).add(true);
+
     Assert.assertTrue(!result);
   }
 
@@ -59,6 +76,12 @@ public class ticketTest {
     create.jButton2.doClick();
     Boolean isHidden = create.getVisibility();
     System.out.println("Button2 test should pass.");
+
+    // Integration Testing - Mock
+    List searchCustomerMock = mock(List.class);
+    searchCustomerMock.add(isHidden);
+    verify(searchCustomerMock).add(true);
+
     Assert.assertTrue(isHidden);
   }
 
