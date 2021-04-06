@@ -1,3 +1,4 @@
+import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -5,6 +6,8 @@ import javax.swing.*;
 
 import static java.lang.Thread.sleep;
 import static org.junit.Assert.fail;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
 // This is for negative testing (exception testing)
 public class searchCustomerTest {
@@ -43,9 +46,15 @@ public class searchCustomerTest {
     // jButton1ActionPerformed to throw an exception for some reason
     // If invalid input, and SQL not thrown, test fails
     // If invalid input, and SQL thrown, test passes
-    Assert.assertTrue(searchCustomer.button1IsIOExceptionThrown);
-    System.out.println("Button 1 IO exception was caught");
+    Boolean isIOThrown = searchCustomer.button1IsIOExceptionThrown;
 
+    // Integration Testing - Mock
+    List searchCustomerMock = mock(List.class);
+    searchCustomerMock.add(isIOThrown);
+    verify(searchCustomerMock).add(true);
+
+    Assert.assertTrue(isIOThrown);
+    System.out.println("Button 1 IO exception was caught");
   }
 
 
@@ -80,7 +89,14 @@ public class searchCustomerTest {
     // jButton2ActionPerformed to throw an exception for some reason
     // If invalid input, and SQL not thrown, test fails
     // If invalid input, and SQL thrown, test passes
-    Assert.assertTrue(searchCustomer.button2IsSQLThrown);
+    Boolean isSQLThrown = searchCustomer.button2IsSQLThrown;
+
+    // Integration Testing - Mock
+    List searchCustomerMock = mock(List.class);
+    searchCustomerMock.add(isSQLThrown);
+    verify(searchCustomerMock).add(true);
+
+    Assert.assertTrue(isSQLThrown);
     System.out.println("Button2 SQLException test should pass.");
   }
 
@@ -91,6 +107,12 @@ public class searchCustomerTest {
     search.jButton3.doClick();
     Boolean isHidden = search.getVisibility();
     System.out.println("Button1 test should pass");
+
+    // Integration Testing - Mock
+    List searchCustomerMock = mock(List.class);
+    searchCustomerMock.add(isHidden);
+    verify(searchCustomerMock).add(true);
+
     Assert.assertTrue(isHidden);
   }
 
@@ -113,7 +135,13 @@ public class searchCustomerTest {
     // jButton4ActionPerformed to throw an exception for some reason
     // If invalid input, and SQL not thrown, test fails
     // If invalid input, and SQL thrown, test passes
-    Assert.assertTrue(searchCustomer.button4IsSQLThrown);
+    Boolean isSQLThrown = searchCustomer.button4IsSQLThrown;
+
+    List searchCustomerMock = mock(List.class);
+    searchCustomerMock.add(isSQLThrown);
+    verify(searchCustomerMock).add(true);
+
+    Assert.assertTrue(isSQLThrown);
     System.out.println("Button4 SQLException test should pass.");
   }
 
