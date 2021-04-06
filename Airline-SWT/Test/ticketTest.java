@@ -34,9 +34,9 @@ public class ticketTest {
     Boolean isSQLThrown = myTicket.button1IsSQLThrown;
 
     // Integration Testing - Mock
-    List searchCustomerMock = mock(List.class);
-    searchCustomerMock.add(isSQLThrown);
-    verify(searchCustomerMock).add(true);
+    List ticketMock = mock(List.class);
+    ticketMock.add(isSQLThrown);
+    verify(ticketMock).add(true);
 
     Assert.assertTrue(isSQLThrown);
     System.out.println("Button1 SQLException test should pass.");
@@ -62,9 +62,9 @@ public class ticketTest {
     boolean result = match.find();
 
     // Integration Testing - Mock
-    List searchCustomerMock = mock(List.class);
-    searchCustomerMock.add(!result);
-    verify(searchCustomerMock).add(true);
+    List ticketMock = mock(List.class);
+    ticketMock.add(!result);
+    verify(ticketMock).add(true);
 
     Assert.assertTrue(!result);
   }
@@ -78,9 +78,9 @@ public class ticketTest {
     System.out.println("Button2 test should pass.");
 
     // Integration Testing - Mock
-    List searchCustomerMock = mock(List.class);
-    searchCustomerMock.add(isHidden);
-    verify(searchCustomerMock).add(true);
+    List ticketMock = mock(List.class);
+    ticketMock.add(isHidden);
+    verify(ticketMock).add(true);
 
     Assert.assertTrue(isHidden);
   }
