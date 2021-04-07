@@ -1,8 +1,12 @@
 import static java.lang.Thread.sleep;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
 import javax.swing.JTextField;
 import org.junit.Assert;
 import org.junit.Test;
+
+import java.util.List;
 
 public class userCreationTest {
 
@@ -38,6 +42,12 @@ public class userCreationTest {
     cancel.jButton2.doClick();
     Boolean isHidden =cancel.getVisibility();
     System.out.println("Button2 test should pass.");
+
+    // Integration Testing - Mock
+    List userCreationMock = mock(List.class);
+    userCreationMock.add(isHidden);
+    verify(userCreationMock).add(true);
+
     Assert.assertTrue(isHidden);
 
   }

@@ -1,14 +1,20 @@
 import junit.framework.Assert;
 import junit.framework.TestCase;
+import org.junit.Before;
 import org.junit.Test;
 
 import javax.swing.*;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import static java.lang.Thread.sleep;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
 public class LoginTest extends TestCase {
+
+
 
     @Test
     public void testLogin() throws InterruptedException {
@@ -44,6 +50,7 @@ public class LoginTest extends TestCase {
         Login.jButton1.doClick();
         Login.jButton2.doClick();
     }
+
 
     @Test
     public void testMain() {

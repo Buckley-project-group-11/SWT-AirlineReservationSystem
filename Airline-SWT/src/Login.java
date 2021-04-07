@@ -242,5 +242,8 @@ public class Login extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     public static javax.swing.JPasswordField txtpass;
     public static javax.swing.JTextField txtuser;
+
+    public static boolean button1isInterruptedThrown;
+    public static boolean button2isInterruptedThrown;
     // End of variables declaration//GEN-END:variables
 }
