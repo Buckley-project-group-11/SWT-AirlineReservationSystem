@@ -101,6 +101,7 @@ public class searchCustomerTest {
   }
 
   @Test
+// tests the cancel button
   public void testButton3() {
     searchCustomer search = new searchCustomer();
     search.setVisible(true);
