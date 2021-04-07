@@ -7,10 +7,13 @@ import org.junit.runners.Parameterized;
 import javax.swing.*;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import static java.lang.Thread.sleep;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
 @RunWith(Parameterized.class)
 public class addCustomerTest {
@@ -87,6 +90,12 @@ public class addCustomerTest {
         create.jButton3.doClick();
         Boolean isHidden = create.getVisibility();
         System.out.println("Button3 test should pass.");
+
+        // Integration Testing - Mock
+        List addCustomerMock = mock(List.class);
+        addCustomerMock.add(isHidden);
+        verify(addCustomerMock).add(true);
+
         Assert.assertTrue(isHidden);
     }
 
