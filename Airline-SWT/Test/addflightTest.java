@@ -169,6 +169,12 @@ public class addflightTest {
         details.jButton2.doClick();
         Boolean isHidden =details.getVisibility();
         System.out.println("Button2 test should pass.");
+
+        // Integration Testing - Mock
+        List addFlightMock = mock(List.class);
+        addFlightMock.add(isHidden);
+        verify(addFlightMock).add(true);
+
         Assert.assertTrue(isHidden);
 
     }
