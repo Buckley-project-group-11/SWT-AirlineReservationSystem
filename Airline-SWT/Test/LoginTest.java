@@ -38,18 +38,29 @@ public class LoginTest extends TestCase {
         boolean nameResult = usernameMatch.find();
         boolean passResult = passwordMatch.find();
         boolean allResults = false;
+        boolean[] loginTest = {
+                nameResult,
+                passResult
+        };
+        boolean[] loginPassed = {true, true };
 
         if(nameResult == true && passResult == true){
             allResults = true;
         }
         else{allResults = false;}
 
-
         Assert.assertTrue(allResults);
+
+        // Add a Mock to test the login button
+        List loginMock = mock(List.class);
+        loginMock.add(loginTest);
+        verify(loginMock).add(loginPassed);
 
         Login.jButton1.doClick();
         Login.jButton2.doClick();
     }
+
+    private Login login;
 
 
     @Test
@@ -65,11 +76,16 @@ public class LoginTest extends TestCase {
 
     @Test
     public void testGetUsername(){
-            JTextField user = Login.getUsername();
-            user.setText("user");
-            Assert.assertEquals("user", user.getText());
+        JTextField user = Login.getUsername();
+        user.setText("user");
+        Assert.assertEquals("user", user.getText());
 
-        }
+        // stub for checking the username field
+        JTextField txtuser = new JTextField();
+        txtuser.setText("Username");
+        assertEquals("Username", txtuser);
+
+    }
 
 
 
@@ -79,5 +95,10 @@ public class LoginTest extends TestCase {
         JTextField pass = Login.getPassword();
         pass.setText("pass");
         Assert.assertEquals("pass", pass.getText());
+
+        // stub for checking the password field
+        JTextField txtpass = new JTextField();
+        txtpass.setText("Password");
+        assertEquals("Password", txtpass);
     }
 }
