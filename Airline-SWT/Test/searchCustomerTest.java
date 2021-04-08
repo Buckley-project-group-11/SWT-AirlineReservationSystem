@@ -1,3 +1,5 @@
+import java.sql.SQLException;
+import java.text.ParseException;
 import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
@@ -6,8 +8,7 @@ import javax.swing.*;
 
 import static java.lang.Thread.sleep;
 import static org.junit.Assert.fail;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.*;
 
 // This is for negative testing (exception testing)
 public class searchCustomerTest {
@@ -145,5 +146,17 @@ public class searchCustomerTest {
     Assert.assertTrue(isSQLThrown);
     System.out.println("Button4 SQLException test should pass.");
   }
+
+  @Test
+  public void test() throws SQLException, ParseException {
+    Customer testCustomer = new Customer("Brenda", "Rhodes", "CS015", "12346", "654789", "10501 FGCU BLVD South", "05/01/2021","female","1234567890");
+    DBConnection customerStub = mock(DBConnection.class);
+    when(customerStub.findCust()).thenReturn(testCustomer);
+    System.out.println("Tests if the object returned from the DB was the expected Customer");
+    System.out.print("Expected result: Brenda" + "\n" + "Obtained result: " + testCustomer.getFirstName() + "\n");
+    System.out.println("Test result: " + testCustomer.getFirstName().equalsIgnoreCase("Brenda"));
+    Assert.assertEquals("Brenda", testCustomer.getFirstName());
+  }
+
 
 }
