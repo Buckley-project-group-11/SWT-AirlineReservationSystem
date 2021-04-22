@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.Instant;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
@@ -121,7 +122,9 @@ public class Login extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+    // Timer used in performance testing
+    public static Instant startTimer;
+    public static boolean isCredentialsEmpty;
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         
@@ -132,9 +135,11 @@ public class Login extends javax.swing.JFrame {
         if(username.isEmpty() ||  password.isEmpty())
         {
             JOptionPane.showMessageDialog(this, "UserName or Password Blank");
+            isCredentialsEmpty = true;
         }
         else
         {
+            isCredentialsEmpty = false;
             try {
                 Class.forName("com.mysql.jdbc.Driver");
                 con = DriverManager.getConnection("jdbc:mysql://localhost:/airline","root","");
@@ -148,6 +153,8 @@ public class Login extends javax.swing.JFrame {
                  
                  if(rs.next())
                  {
+                     // Start timer when Main page being loaded
+                     startTimer = Instant.now();
                      Main m = new Main();
                      this.hide();
                      m.setVisible(true);

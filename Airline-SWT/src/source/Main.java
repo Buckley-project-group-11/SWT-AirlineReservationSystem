@@ -5,13 +5,19 @@ package source;/*
  */
 
 
+import java.time.Instant;
+
 public class Main extends javax.swing.JFrame {
 
     /**
      * Creates new form Main
      */
+    // Timer used in performance testing
+    public static Instant endTimer;
     public Main() {
         initComponents();
+        // End timer when main page has loaded
+        endTimer = Instant.now();
     }
 
     /**
