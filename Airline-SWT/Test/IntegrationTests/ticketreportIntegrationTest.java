@@ -1,19 +1,19 @@
-package UnitTests;
+package IntegrationTests;
 
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
 import java.util.List;
-import junit.framework.TestCase;
 import org.junit.Assert;
 import org.junit.Test;
 import source.ticketreport;
 
-public class ticketreportUnitTest extends TestCase {
+public class ticketreportIntegrationTest {
 
   // Tests SQLException for Button 1 (Cancel)
   @Test
   public void testButton1() {
+    // See ticketreportUnitTest for comments
     // Create instance of the ticketreport class
     ticketreport report = new ticketreport();
     report.setVisible(true);
@@ -22,7 +22,9 @@ public class ticketreportUnitTest extends TestCase {
     // Checks boolean to see if screen is hidden
     Boolean isHidden = report.getVisibility();
     System.out.println("Button1 test should pass.");
-    // If boolean true, then test will pass
-    Assert.assertTrue(isHidden);
+    // Mock
+    List ticketReportMock = mock(List.class);
+    ticketReportMock.add(isHidden);
+    verify(ticketReportMock).add(true);
   }
 }
