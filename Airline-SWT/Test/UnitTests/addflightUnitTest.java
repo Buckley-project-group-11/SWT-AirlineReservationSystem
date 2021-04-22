@@ -36,8 +36,6 @@ public class addflightUnitTest extends TestCase {
         Pattern timePattern = Pattern.compile("([01]?[0-9]|2[0-3]):[0-5][0-9](.*AM|PM.*)");
         Pattern chargePattern = Pattern.compile("[0-9]+");
 
-
-
         //Created public getters in the addFlight class to access the Swing components.
         JTextField nameTest = (JTextField) addflight.txtflightname;
         JComboBox<String> sourceTest = (JComboBox<String>) addflight.txtsource;
@@ -46,8 +44,6 @@ public class addflightUnitTest extends TestCase {
         JTextField departTimeTest = (JTextField) addflight.txtdtime;
         JTextField arrTimeTest = (JTextField) addflight.txtarrtime;
         JTextField chargeTest = (JTextField) addflight.txtflightcharge;
-
-
 
         //Initialize the booleans that will be used to test the Source and Departure combo boxes.
         boolean testSourceContains = false;
@@ -64,7 +60,8 @@ public class addflightUnitTest extends TestCase {
         }
 
         /*
-        Because a Swing GUI cannot be accessed during testing, the component is set to the test value manually.
+        Because a Swing GUI cannot be accessed during testing, the component is set to the test
+        value manually.
         The test value for the name of the flight is within the Regex value and is expected to pass.
          */
         nameTest.setText("yellowSky");
@@ -132,20 +129,21 @@ public class addflightUnitTest extends TestCase {
                 break;
             }
         }
+
+
         addflight.jButton1.doClick();
         addflight.jButton2.doClick();
         //Assert determines the validity of the test.
         Assert.assertFalse(allTestPassed);
 
 
-
         addflight increment = new addflight();
         increment.autoID();
         addflight.jButton1.doClick();
-
-
-
     }
+
+
+
 
     @Test
     public void test_visibility(){

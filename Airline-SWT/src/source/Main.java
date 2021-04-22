@@ -14,6 +14,8 @@ public class Main extends javax.swing.JFrame {
      */
     // Timer used in performance testing
     public static Instant timer;
+    public Instant endTimer;
+
     public Main() {
         initComponents();
         // Get time when main page has loaded

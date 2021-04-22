@@ -193,4 +193,29 @@ public class searchCustomerIntegrationTest {
         Assert.assertEquals("Brenda", testCustomer.getFirstName());
     }
 
+    @Test
+    public void test() throws SQLException, ParseException {
+        //Expected customer object to be searched for in the database.
+        Customer testCustomer = new Customer(
+                "Brenda",
+                "Rhodes",
+                "CS015",
+                "12346",
+                "654789",
+                "10501 FGCU BLVD South",
+                "05/01/2021",
+                "female",
+                "1234567890");
+        //Establishes database connection stub
+        DBConnection customerStub = mock(DBConnection.class);
+        //The the stub finds this customer, it will return the expected customer
+        when(customerStub.findCust()).thenReturn(testCustomer);
+        System.out.println("Tests if the object returned from the DB was the expected Customer");
+        System.out.print("Expected result: Brenda" + "\n" + "Obtained result: " + testCustomer.getFirstName() + "\n");
+        System.out.println("Test result: " + testCustomer.getFirstName().equalsIgnoreCase("Brenda"));
+        Assert.assertEquals("Brenda", testCustomer.getFirstName());
+
+        searchCustomer.jButton4.doClick();
+    }
+
 }

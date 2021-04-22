@@ -41,7 +41,14 @@ public class addCustomerUnitTest {
         addCustomerObj = new addCustomer();
     }
 
-    public addCustomerUnitTest(String customerFirstName, String customerLastName, String passportId, String contact, String nic, String address, boolean expectedResult) {
+    public addCustomerUnitTest(
+            String customerFirstName,
+            String customerLastName,
+            String passportId,
+            String contact,
+            String nic,
+            String address,
+            boolean expectedResult) {
         this.customerFirstName = customerFirstName;
         this.customerLastName = customerLastName;
         this.passportId = passportId;

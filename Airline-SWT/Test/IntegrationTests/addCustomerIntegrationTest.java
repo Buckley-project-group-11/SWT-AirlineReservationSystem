@@ -4,7 +4,6 @@ import org.junit.Assert;
 import org.junit.Test;
 import source.Customer;
 import source.DBConnection;
-import source.addCustomer;
 import source.searchCustomer;
 
 import javax.swing.*;
@@ -17,6 +16,10 @@ import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.*;
 
 public class addCustomerIntegrationTest {
+
+
+
+
 
     // Integration test
     @Test
@@ -50,6 +53,7 @@ public class addCustomerIntegrationTest {
         // If invalid input, and SQL not thrown, test fails
         // If invalid input, and SQL thrown, test passes
         Boolean isIOThrown = searchCustomer.button1IsIOExceptionThrown;
+
 
 
         // Integration Testing - Mock
