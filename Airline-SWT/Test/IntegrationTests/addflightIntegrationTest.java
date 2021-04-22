@@ -1,8 +1,7 @@
-package UnitTests;
+package IntegrationTests;
 
 import com.toedter.calendar.JDateChooser;
 import junit.framework.TestCase;
-import org.junit.Assert;
 import org.junit.Test;
 import source.addflight;
 
@@ -10,12 +9,15 @@ import javax.swing.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import static java.lang.Thread.sleep;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
-public class addflightUnitTest extends TestCase {
+public class addflightIntegrationTest extends TestCase {
 
     @Test
     /*
@@ -35,7 +37,8 @@ public class addflightUnitTest extends TestCase {
         Pattern timePattern = Pattern.compile("([01]?[0-9]|2[0-3]):[0-5][0-9](.*AM|PM.*)");
         Pattern chargePattern = Pattern.compile("[0-9]+");
 
-
+        //A String Array of the elements in the combo box is made to initialize the boundary.
+        String[] expResult = {"India", "Srilanka", "Uk", "Usa", "Canada", "Chinna"};
 
         //Created public getters in the addFlight class to access the Swing components.
         JTextField nameTest = (JTextField) addflight.getTxtName();
@@ -52,13 +55,15 @@ public class addflightUnitTest extends TestCase {
         boolean testDepartContains = false;
 
 
-        //A String Array of the elements in the combo box is made to initialize the boundary.
-        String[] expResult = {"India", "Srilanka", "Uk", "Usa", "Canada", "Chinna"};
         //A loop iterates through the array and adds each item to the combo box selection component.
         for (int i = 0; i < expResult.length; i++) {
             sourceTest.setSelectedItem(expResult[i]);
             departTest.setSelectedItem(expResult[i]);
             sleep(200);
+            //Once the component selects the item, it is tested to see if it exist in the combo box.
+            testSourceContains = expResult[i].equals(sourceTest.getSelectedItem());
+            testDepartContains = expResult[i].equals(departTest.getSelectedItem());
+            //If the item is in the combobox then the selection made by the user was within bounds.
         }
 
         /*
@@ -116,22 +121,22 @@ public class addflightUnitTest extends TestCase {
                 arrTimeResult,
                 chargeResult};
 
-        boolean allTestPassed = false;
 
-        /*
-        Each test input is tested for its validity. If a test input is false, then the loop will break and the
-        test will fail.
-         */
-        for (int i = 0; i < testResults.length; i++) {
-            if (testResults[i] == true) {
-                allTestPassed = true;
-            } else {
-                allTestPassed = false;
-                break;
-            }
-        }
-        //Assert determines the validity of the test.
-        Assert.assertTrue(allTestPassed);
+
+        boolean[]  allTestPassed = {true, true, true, true, true, true, true};
+        //Creates the mock object which will store the test results.
+        List flightAddMock = mock(List.class);
+        //Add the test results to the mock object.
+        flightAddMock.add(testResults);
+        //Verifies if the actual output equates the expected output.
+        verify(flightAddMock).add(allTestPassed);
+
+        //This button's action stores the newly created flight into the database.
+        addflight.jButton1.doClick();
+
+        //This button is pressed for coverage.
+        addflight.jButton2.doClick();
+
     }
 
 }
