@@ -4,7 +4,6 @@ import org.junit.Assert;
 import org.junit.Test;
 import source.Customer;
 import source.DBConnection;
-import source.addCustomer;
 import source.searchCustomer;
 
 import javax.swing.*;
@@ -15,8 +14,7 @@ import java.util.List;
 import static java.lang.Thread.sleep;
 import static org.mockito.Mockito.*;
 
-public class addCustomerIntegrationTest {
-
+public class searchCustomerIntegrationTest {
     // Integration test
     @Test
     public void testButton1IOException() throws InterruptedException {

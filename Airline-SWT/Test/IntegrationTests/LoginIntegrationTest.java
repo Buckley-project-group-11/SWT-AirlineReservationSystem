@@ -1,4 +1,4 @@
-package UnitTests;
+package IntegrationTests;
 
 import junit.framework.Assert;
 import org.junit.Test;
@@ -13,9 +13,8 @@ import static java.lang.Thread.sleep;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
-public class LoginUnitTest {
-
-    // Tests if the user name and password match
+public class LoginIntegrationTest {
+    // Tests the buttons on the log in page
     @Test
     public void testLogin() throws InterruptedException {
         Login frame = new Login();
@@ -31,26 +30,30 @@ public class LoginUnitTest {
         username.postActionEvent();
         password.postActionEvent();
 
-        // uses regex patterns to check if the username and password match the conventions needed
-        Pattern namePattern = Pattern.compile("[A-Za-z]");
-        Matcher usernameMatch = namePattern.matcher(username.getText());
-        Matcher passwordMatch = namePattern.matcher(password.getText());
-
-        boolean nameResult = usernameMatch.find();
-        boolean passResult = passwordMatch.find();
-        boolean allResults = false;
         boolean[] loginTest = {
-                nameResult,
-                passResult
+                true,
+                true
         };
         boolean[] loginPassed = {true, true };
 
-        if(nameResult == true && passResult == true){
-            allResults = true;
-        }
-        else{allResults = false;}
+        // Add a Mock to test the login button
+        List loginMock = mock(List.class);
+        loginMock.add(loginTest);
+        verify(loginMock).add(loginPassed);
 
-        Assert.assertTrue(allResults);
+        Login.jButton1.doClick();
+        Login.jButton2.doClick();
     }
 
+    // Tests the call from main
+    @Test
+    public void testMainStub() {
+        Login frame = new Login();
+        frame.setVisible(true);
+        if (frame.isActive()) {
+            Assert.assertTrue(true);
+        } else {
+            Assert.assertFalse(false);
+        }
+    }
 }
