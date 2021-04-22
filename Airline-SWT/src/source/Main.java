@@ -13,11 +13,11 @@ public class Main extends javax.swing.JFrame {
      * Creates new form Main
      */
     // Timer used in performance testing
-    public static Instant endTimer;
+    public static Instant timer;
     public Main() {
         initComponents();
-        // End timer when main page has loaded
-        endTimer = Instant.now();
+        // Get time when main page has loaded
+        timer = Instant.now();
     }
 
     /**
@@ -138,7 +138,7 @@ public class Main extends javax.swing.JFrame {
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
-        
+        timer = Instant.now();
         addCustomer cus = new addCustomer();
         jDesktopPane1.add(cus);
         cus.setVisible(true);
@@ -147,7 +147,7 @@ public class Main extends javax.swing.JFrame {
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         // TODO add your handling code here:
-        
+        timer = Instant.now();
         searchCustomer scus = new searchCustomer();
         jDesktopPane1.add(scus);
         scus.setVisible(true);
@@ -157,6 +157,7 @@ public class Main extends javax.swing.JFrame {
 
     public void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
         // TODO add your handling code here:
+        timer = Instant.now();
         addflight f = new addflight();
         jDesktopPane1.add(f);
         f.setVisible(true);
@@ -165,6 +166,7 @@ public class Main extends javax.swing.JFrame {
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         // TODO add your handling code here:
+        timer = Instant.now();
          ticket t = new ticket();
         jDesktopPane1.add(t);
         t.setVisible(true);
@@ -173,7 +175,7 @@ public class Main extends javax.swing.JFrame {
 
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
         // TODO add your handling code here:
-        
+        timer = Instant.now();
         ticketreport ti = new ticketreport();
         jDesktopPane1.add(ti);
         ti.setVisible(true);
@@ -183,6 +185,7 @@ public class Main extends javax.swing.JFrame {
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
         // TODO add your handling code here:
+        timer = Instant.now();
          userCreation u = new userCreation();
         jDesktopPane1.add(u);
         u.setVisible(true);
