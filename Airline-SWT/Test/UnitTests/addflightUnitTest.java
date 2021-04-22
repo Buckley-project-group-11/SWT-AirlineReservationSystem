@@ -131,8 +131,17 @@ public class addflightUnitTest extends TestCase {
                 break;
             }
         }
+        addflight.jButton1.doClick();
+        addflight.jButton2.doClick();
         //Assert determines the validity of the test.
         Assert.assertTrue(allTestPassed);
+
+
+
+        addflight increment = new addflight();
+        increment.autoID();
+        addflight.jButton1.doClick();
+
     }
 
 }

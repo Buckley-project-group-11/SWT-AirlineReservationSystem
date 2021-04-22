@@ -1,16 +1,12 @@
 package PerformanceTests;
 
-import org.openjdk.jmh.annotations.Benchmark;
-import org.openjdk.jmh.annotations.BenchmarkMode;
-import org.openjdk.jmh.annotations.Fork;
-import org.openjdk.jmh.annotations.Mode;
 import source.addCustomer;
 
 public class addCustomerPerformanceTest {
 
-   @Benchmark
-   @Fork(value =1, warmups =2)
-   @BenchmarkMode(Mode.Throughput)
+   //@Benchmark
+   //@Fork(value =1, warmups =2)
+   //@BenchmarkMode(Mode.Throughput)
    public void init(){
       addCustomer.getVisibility();
    }
