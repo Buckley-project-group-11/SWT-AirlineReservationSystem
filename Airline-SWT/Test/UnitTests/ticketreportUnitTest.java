@@ -1,9 +1,5 @@
 package UnitTests;
 
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
-
-import java.util.List;
 import junit.framework.TestCase;
 import org.junit.Assert;
 import org.junit.Test;
@@ -17,6 +13,7 @@ public class ticketreportUnitTest extends TestCase {
     // Create instance of the ticketreport class
     ticketreport report = new ticketreport();
     report.setVisible(true);
+    report.LoadData();
     // Clicks cancel button, which should hide the ticket report screen
     report.jButton1.doClick();
     // Checks boolean to see if screen is hidden
@@ -25,4 +22,12 @@ public class ticketreportUnitTest extends TestCase {
     // If boolean true, then test will pass
     Assert.assertTrue(isHidden);
   }
+
+  @Test
+  public void test_sql_exception(){
+    ticketreport ex_test = new ticketreport();
+    ex_test.LoadData();
+
+  }
+
 }

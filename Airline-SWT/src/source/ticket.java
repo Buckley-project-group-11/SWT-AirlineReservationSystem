@@ -1,22 +1,15 @@
 package source;
 
-import java.awt.Component;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
-import java.sql.SQLException;
-import java.sql.Statement;
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+import java.awt.*;
+import java.sql.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JOptionPane;
-import javax.swing.JTextField;
-import javax.swing.table.DefaultTableModel;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -537,8 +530,6 @@ public class ticket extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
         String id = txtcustid.getText();
 
-
-
         try {
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://localhost/airline","root","");
@@ -701,8 +692,8 @@ public class ticket extends javax.swing.JInternalFrame {
     public static javax.swing.JButton jButton1;
     // Changed to public static for the test class
     public static javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    public static javax.swing.JButton jButton3;
+    public static javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -723,8 +714,8 @@ public class ticket extends javax.swing.JInternalFrame {
     private javax.swing.JTable jTable1;
     private javax.swing.JComboBox<String> txtclass;
     // Changed to static for the getter used by test class
-    private static javax.swing.JTextField txtcustid;
-    private javax.swing.JComboBox<String> txtdepart;
+    public static javax.swing.JTextField txtcustid;
+    public static javax.swing.JComboBox<String> txtdepart;
     private javax.swing.JLabel txtdept;
     private javax.swing.JLabel txtfirstname;
     private javax.swing.JLabel txtlastname;
@@ -732,7 +723,7 @@ public class ticket extends javax.swing.JInternalFrame {
     // Changed to static for the getter used by test class
     private static javax.swing.JTextField txtprice;
     private javax.swing.JSpinner txtseats;
-    private javax.swing.JComboBox<String> txtsource;
+    public static javax.swing.JComboBox<String> txtsource;
     private javax.swing.JLabel txtticketno;
     private javax.swing.JLabel txttotal;
     // Changed to public static for the test class

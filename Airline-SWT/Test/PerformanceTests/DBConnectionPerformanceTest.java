@@ -1,0 +1,5 @@
+package PerformanceTests;
+
+class DBConnectionPerformanceTest {
+
+}

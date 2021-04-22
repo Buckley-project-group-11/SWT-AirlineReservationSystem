@@ -3,13 +3,24 @@ package UnitTests;
 import junit.framework.Assert;
 import junit.framework.TestCase;
 import org.junit.Test;
+import source.addCustomer;
 import source.userCreation;
 
 import javax.swing.*;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import static java.lang.Thread.sleep;
 
 public class userCreationUnitTest extends TestCase {
+
+    Connection con;
+    PreparedStatement pst;
     //Unit Testing the functional requirement FUN-2 using negative testing.
     @Test
     public void test_FUN2_exception_handling() throws InterruptedException {
@@ -33,6 +44,43 @@ public class userCreationUnitTest extends TestCase {
          */
         Assert.assertTrue(creation.button1IsSQLThrown);
         System.out.println("Button1 SQLException test should pass.");
+    }
+
+    @Test
+    public void creat_user_test(){
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection("jdbc:mysql://localhost/airline", "root", "");
+            pst = con.prepareStatement("DELETE from user where id = ?");
+            pst.setString(1, "UO001");
+            pst.executeUpdate();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(addCustomer.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(addCustomer.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        userCreation useTest = new userCreation();
+        useTest.autoID();
+
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+            con = DriverManager.getConnection("jdbc:mysql://localhost/airline","root","");
+            pst = con.prepareStatement("insert into user(id,firstname,lastname, username, password)values(?,?,?,?,?)");
+
+            pst.setString(1, "UO001");
+            pst.setString(2, "Bill");
+            pst.setString(3, "Phill");
+            pst.setString(4, "user");
+            pst.setString(5, "pass");
+            pst.executeUpdate();
+
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(addCustomer.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (SQLException ex) {
+            Logger.getLogger(addCustomer.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }
 
     //Test the GUI component's functionality associated with requirement FUN-2

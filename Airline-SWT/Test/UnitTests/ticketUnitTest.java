@@ -1,14 +1,15 @@
 package UnitTests;
 
-import static java.lang.Thread.sleep;
-
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import javax.swing.JTextField;
 import junit.framework.TestCase;
 import org.junit.Assert;
 import org.junit.Test;
 import source.ticket;
+
+import javax.swing.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import static java.lang.Thread.sleep;
 
 public class ticketUnitTest extends TestCase {
 
@@ -64,6 +65,36 @@ public class ticketUnitTest extends TestCase {
     create.setVisible(true);
     // Clicks cancel button, which should hide the ticket report screen
     create.jButton2.doClick();
+    // Checks boolean to see if screen is hidden
+    Boolean isHidden = create.getVisibility();
+    System.out.println("Button2 test should pass.");
+    // If boolean true, then test will pass
+    Assert.assertTrue(isHidden);
+  }
+
+  @Test
+  public void testButton3() {
+    ticket create = new ticket();
+    create.setVisible(true);
+    ticket.txtdepart.setSelectedItem("India");
+    ticket.txtsource.setSelectedItem("Uk");
+    // Clicks cancel button, which should hide the ticket report screen
+    ticket.jButton3.doClick();
+    // Checks boolean to see if screen is hidden
+    Boolean isHidden = create.getVisibility();
+    System.out.println("Button2 test should pass.");
+    // If boolean true, then test will pass
+    Assert.assertFalse(isHidden.equals(false));
+  }
+
+
+  @Test
+  public void testButton4() {
+    ticket create = new ticket();
+    create.setVisible(true);
+    ticket.txtcustid.setText("CS001");
+    // Clicks cancel button, which should hide the ticket report screen
+    ticket.jButton4.doClick();
     // Checks boolean to see if screen is hidden
     Boolean isHidden = create.getVisibility();
     System.out.println("Button2 test should pass.");

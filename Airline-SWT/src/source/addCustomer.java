@@ -1,26 +1,21 @@
 package source;
 
 
-import java.awt.Image;
+import javax.imageio.ImageIO;
+import javax.swing.*;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.imageio.ImageIO;
-import javax.swing.*;
-import javax.swing.filechooser.FileNameExtensionFilter;
 
 
 /*
@@ -528,7 +523,7 @@ public class addCustomer extends javax.swing.JInternalFrame {
     private static javax.swing.JTextArea txtaddress;
     private static javax.swing.JTextField txtcontact;
     private static javax.swing.JTextField txtfirstname;
-    private javax.swing.JLabel txtid;
+    public static javax.swing.JLabel txtid;
     private static javax.swing.JTextField txtlastname;
     private static javax.swing.JTextField txtnic;
     private static javax.swing.JTextField txtpassport;

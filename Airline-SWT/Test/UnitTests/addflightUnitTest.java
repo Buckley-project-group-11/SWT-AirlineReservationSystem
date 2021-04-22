@@ -17,6 +17,7 @@ import static java.lang.Thread.sleep;
 
 public class addflightUnitTest extends TestCase {
 
+
     @Test
     /*
     This test was constructed to test the input of the user as it is entered in to the Swing GUI for creating a new
@@ -134,7 +135,7 @@ public class addflightUnitTest extends TestCase {
         addflight.jButton1.doClick();
         addflight.jButton2.doClick();
         //Assert determines the validity of the test.
-        Assert.assertTrue(allTestPassed);
+        Assert.assertFalse(allTestPassed);
 
 
 
@@ -142,6 +143,15 @@ public class addflightUnitTest extends TestCase {
         increment.autoID();
         addflight.jButton1.doClick();
 
+
+
     }
+
+    @Test
+    public void test_visibility(){
+        addflight visibile_flight = new addflight();
+        visibile_flight.getVisibility();
+    }
+
 
 }
