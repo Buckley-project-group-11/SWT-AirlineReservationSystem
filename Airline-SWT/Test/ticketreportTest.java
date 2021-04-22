@@ -1,10 +1,7 @@
 import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
-
-import javax.swing.*;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import source.ticketreport;
 
 import static java.lang.Thread.sleep;
 import static org.mockito.Mockito.mock;

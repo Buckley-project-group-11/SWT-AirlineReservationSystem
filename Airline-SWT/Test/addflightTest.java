@@ -4,14 +4,13 @@
 import com.toedter.calendar.JDateChooser;
 import org.junit.Assert;
 import org.junit.Test;
+import source.addflight;
+
 import javax.swing.*;
-import java.sql.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import static java.lang.Thread.sleep;

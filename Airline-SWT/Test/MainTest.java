@@ -1,10 +1,7 @@
 import junit.framework.TestCase;
 import org.junit.Assert;
 import org.junit.Test;
-
-import javax.swing.*;
-import java.awt.*;
-import java.util.ArrayList;
+import source.Main;
 
 import static java.lang.Thread.sleep;
 

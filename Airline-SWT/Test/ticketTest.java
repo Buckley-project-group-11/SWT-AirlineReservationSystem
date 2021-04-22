@@ -2,13 +2,13 @@ import static java.lang.Thread.sleep;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
-import java.util.LinkedList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import javax.swing.JTextField;
 import org.junit.Assert;
 import org.junit.Test;
+import source.ticket;
 
 public class ticketTest {
 
