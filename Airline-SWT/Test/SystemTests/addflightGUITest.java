@@ -73,8 +73,8 @@ public class addflightGUITest extends TestCase {
         // Integration Testing - Mock
         List addFlightMock = mock(List.class);
         addFlightMock.add(isHidden);
-        verify(addFlightMock).add(true);
-        Assert.assertTrue(isHidden);
+        verify(addFlightMock).add(false);
+        Assert.assertFalse(isHidden);
 
     }
 
