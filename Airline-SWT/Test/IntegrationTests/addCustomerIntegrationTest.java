@@ -13,6 +13,7 @@ import java.text.ParseException;
 import java.util.List;
 
 import static java.lang.Thread.sleep;
+import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.*;
 
 public class addCustomerIntegrationTest {
@@ -50,12 +51,13 @@ public class addCustomerIntegrationTest {
         // If invalid input, and SQL thrown, test passes
         Boolean isIOThrown = searchCustomer.button1IsIOExceptionThrown;
 
+
         // Integration Testing - Mock
         List searchCustomerMock = mock(List.class);
         searchCustomerMock.add(isIOThrown);
         verify(searchCustomerMock).add(true);
 
-        Assert.assertTrue(isIOThrown);
+        assertTrue(isIOThrown);
         System.out.println("Button 1 IO exception was caught");
     }
 
@@ -99,7 +101,7 @@ public class addCustomerIntegrationTest {
         searchCustomerMock.add(isSQLThrown);
         verify(searchCustomerMock).add(true);
 
-        Assert.assertTrue(isSQLThrown);
+        assertTrue(isSQLThrown);
         System.out.println("Button2 SQLException test should pass.");
     }
 
@@ -118,7 +120,7 @@ public class addCustomerIntegrationTest {
         searchCustomerMock.add(isHidden);
         verify(searchCustomerMock).add(true);
 
-        Assert.assertTrue(isHidden);
+        assertTrue(isHidden);
     }
 
     // Tests the SQL exception try/catch of Button4 (Find)
@@ -146,7 +148,7 @@ public class addCustomerIntegrationTest {
         searchCustomerMock.add(isSQLThrown);
         verify(searchCustomerMock).add(true);
 
-        Assert.assertTrue(isSQLThrown);
+        assertTrue(isSQLThrown);
         System.out.println("Button4 SQLException test should pass.");
     }
 
@@ -161,5 +163,7 @@ public class addCustomerIntegrationTest {
         System.out.println("Test result: " + testCustomer.getFirstName().equalsIgnoreCase("Brenda"));
         Assert.assertEquals("Brenda", testCustomer.getFirstName());
     }
+
+
 
 }

@@ -339,38 +339,8 @@ public class addflight extends javax.swing.JInternalFrame {
         System.out.println("Add flight has been hidden.");
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    public static Boolean getVisibility(){
-        return isHidden;
-    }
 
-    public static Component getTxtName(){
-        JTextField x = txtflightname;
-        return x;
-    }
-    public static Component getTxtsource(){
-        JComboBox<String> x = txtsource;
-        return x;
-    }
-    public static Component getTxtdepart(){
-        JComboBox<String> x = txtdepart;
-        return x;
-    }
-    public static Component getTxtdate(){
-        JDateChooser x = txtdate;
-        return x;
-    }
-    public static Component getTxtdtime(){
-        JTextField x = txtdtime;
-        return x;
-    }
-    public static Component getTxtarrtime(){
-        JTextField x = txtarrtime;
-        return x;
-    }
-    public static Component getTxtflightcharge(){
-        JTextField x = txtflightcharge;
-        return x;
-    }
+
 
 
 
@@ -396,5 +366,9 @@ public class addflight extends javax.swing.JInternalFrame {
     public static javax.swing.JTextField txtflightname;
     public static javax.swing.JComboBox<String> txtsource;
     public static boolean isHidden;
+
+    public Boolean getVisibility() {
+        return addflight.isHidden;
+    }
     // End of variables declaration//GEN-END:variables
 }

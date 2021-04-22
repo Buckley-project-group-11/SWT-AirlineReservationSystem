@@ -133,6 +133,39 @@ public class searchCustomerIntegrationTest {
         sleep(2000);
         // Click button4 (Find) to attempt a search with the invalid input
         searchCustomer.jButton4.doClick();
+
+        searchCustomer.txtcustid.setText("CS001");
+        searchCustomer.jButton4.doClick();
+        // In searchCustomer SQLException catch, button4IsSQLThrown set to true
+        // This was work around since I wasn't able to get
+        // jButton4ActionPerformed to throw an exception for some reason
+        // If invalid input, and SQL not thrown, test fails
+        // If invalid input, and SQL thrown, test passes
+        Boolean isSQLThrown = searchCustomer.button4IsSQLThrown;
+
+        List searchCustomerMock = mock(List.class);
+        searchCustomerMock.add(isSQLThrown);
+        verify(searchCustomerMock).add(true);
+
+        Assert.assertTrue(isSQLThrown);
+        System.out.println("Button4 SQLException test should pass.");
+    }
+
+
+
+    @Test
+    public void login_IO_exception() throws InterruptedException {
+        // Create instance of the searchCustomer class
+        searchCustomer search = new searchCustomer();
+        search.setVisible(true);
+        // Access the textfield used to search
+        JTextField findText = (JTextField) search.getFindText();
+        // Enter an invalid input (a special character) to trigger SQLException
+        findText.setText("♥");
+        // Give program 2 seconds to accept text
+        sleep(2000);
+        // Click button4 (Find) to attempt a search with the invalid input
+        searchCustomer.jButton4.doClick();
         // In searchCustomer SQLException catch, button4IsSQLThrown set to true
         // This was work around since I wasn't able to get
         // jButton4ActionPerformed to throw an exception for some reason

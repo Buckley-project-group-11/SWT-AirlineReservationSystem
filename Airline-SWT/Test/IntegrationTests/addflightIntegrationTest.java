@@ -2,7 +2,9 @@ package IntegrationTests;
 
 import com.toedter.calendar.JDateChooser;
 import junit.framework.TestCase;
+import org.junit.Before;
 import org.junit.Test;
+import source.addCustomer;
 import source.addflight;
 
 import javax.swing.*;
@@ -14,8 +16,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import static java.lang.Thread.sleep;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
+import static org.junit.Assert.assertTrue;
+import static org.mockito.Mockito.*;
 
 public class addflightIntegrationTest extends TestCase {
 
@@ -41,13 +43,13 @@ public class addflightIntegrationTest extends TestCase {
         String[] expResult = {"India", "Srilanka", "Uk", "Usa", "Canada", "Chinna"};
 
         //Created public getters in the addFlight class to access the Swing components.
-        JTextField nameTest = (JTextField) addflight.getTxtName();
-        JComboBox<String> sourceTest = (JComboBox<String>) addflight.getTxtsource();
-        JComboBox<String> departTest = (JComboBox<String>) addflight.getTxtdepart();
-        JDateChooser dateTest = (JDateChooser) addflight.getTxtdate();
-        JTextField departTimeTest = (JTextField) addflight.getTxtdtime();
-        JTextField arrTimeTest = (JTextField) addflight.getTxtarrtime();
-        JTextField chargeTest = (JTextField) addflight.getTxtflightcharge();
+        JTextField nameTest = (JTextField) addflight.txtflightname;
+        JComboBox<String> sourceTest = (JComboBox<String>) addflight.txtsource;
+        JComboBox<String> departTest = (JComboBox<String>) addflight.txtdepart;
+        JDateChooser dateTest = (JDateChooser) addflight.txtdate;
+        JTextField departTimeTest = (JTextField) addflight.txtdtime;
+        JTextField arrTimeTest = (JTextField) addflight.txtarrtime;
+        JTextField chargeTest = (JTextField) addflight.txtflightcharge;
 
 
         //Initialize the booleans that will be used to test the Source and Departure combo boxes.
@@ -92,7 +94,7 @@ public class addflightIntegrationTest extends TestCase {
 
         //The date needs to be formatted the same way as the database has dates stored.
         DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        String Date = dateFormat.format(((JDateChooser) addflight.getTxtdate()).getDate());
+        String Date = dateFormat.format(((JDateChooser) addflight.txtdate).getDate());
 
 
         //Matcher objects are created for each of the fields that have Regex boundaries.
@@ -137,6 +139,13 @@ public class addflightIntegrationTest extends TestCase {
         //This button is pressed for coverage.
         addflight.jButton2.doClick();
 
+        frame.autoID();
+
     }
+
+
+
+
+
 
 }

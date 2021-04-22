@@ -642,7 +642,7 @@ public class searchCustomer extends javax.swing.JInternalFrame {
   // txtcontact and txtcustid needed to be made static or test class
   // wouldn't be able to access it through getters
   private static javax.swing.JTextField txtcontact;
-  private static javax.swing.JTextField txtcustid;
+  public static javax.swing.JTextField txtcustid;
   private javax.swing.JTextField txtfirstname;
   private javax.swing.JTextField txtlastname;
   private javax.swing.JTextField txtnic;
