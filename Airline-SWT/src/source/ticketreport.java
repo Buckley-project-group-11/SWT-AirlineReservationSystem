@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
+import java.time.Instant;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -23,9 +24,11 @@ public class ticketreport extends javax.swing.JInternalFrame {
     /**
      * Creates new form ticketreport
      */
+    public static Instant endTimer;
     public ticketreport() {
         initComponents();
         LoadData();
+        endTimer = Instant.now();
     }
 Connection con;
 PreparedStatement pst;
