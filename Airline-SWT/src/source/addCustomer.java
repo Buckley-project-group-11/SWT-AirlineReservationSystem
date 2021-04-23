@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.sql.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.Instant;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -30,9 +31,11 @@ public class addCustomer extends javax.swing.JInternalFrame {
     /**
      * Creates new form addCustomer
      */
+    public static Instant endTimer;
     public addCustomer() {
         initComponents();
         autoID();
+        endTimer = Instant.now();
     }
     
    Connection con;

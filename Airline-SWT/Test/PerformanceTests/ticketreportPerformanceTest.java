@@ -6,12 +6,13 @@ import static org.junit.jupiter.api.Assertions.*;
 import java.time.Duration;
 import java.time.Instant;
 import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import source.Main;
 import source.ticket;
 import source.ticketreport;
 
 class ticketreportPerformanceTest {
+
 
   @Test
   public void testTicketReportLoadTime() {

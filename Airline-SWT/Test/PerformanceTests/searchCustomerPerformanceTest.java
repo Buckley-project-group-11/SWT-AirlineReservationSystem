@@ -8,7 +8,7 @@ import java.time.Duration;
 import java.time.Instant;
 import javax.swing.JTextField;
 import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import source.Login;
 import source.Main;
 import source.searchCustomer;
