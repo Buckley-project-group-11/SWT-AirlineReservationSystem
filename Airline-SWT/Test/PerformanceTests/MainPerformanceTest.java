@@ -2,13 +2,12 @@ package PerformanceTests;
 
 import static java.lang.Float.parseFloat;
 import static java.lang.Thread.sleep;
-import static org.junit.jupiter.api.Assertions.*;
 
 import java.time.Duration;
 import java.time.Instant;
 import javax.swing.JTextField;
 import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import source.Login;
 import source.Main;
 
@@ -34,7 +33,7 @@ class MainPerformanceTest {
     Main main = new Main();
     main.setVisible(true);
     // Ends when main page finishes loading
-    Instant endTimer = main.endTimer;
+    Instant endTimer = main.timer;
     // Calculates duration and parses into float
     float loadTime = parseFloat(Duration
         .between(startTimer, endTimer).toString().substring(2)

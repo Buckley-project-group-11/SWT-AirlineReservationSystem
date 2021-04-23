@@ -11,6 +11,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.Instant;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.*;
@@ -30,9 +31,11 @@ public class addflight extends javax.swing.JInternalFrame {
     /**
      * Creates new form addflight
      */
+    public static Instant endTimer;
     public addflight() {
         initComponents();
         autoID();
+        endTimer = Instant.now();
     }
 
     Connection con;

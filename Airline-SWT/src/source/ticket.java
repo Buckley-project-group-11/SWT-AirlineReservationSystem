@@ -6,6 +6,7 @@ import java.awt.*;
 import java.sql.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.time.Instant;
 import java.util.Date;
 import java.util.Vector;
 import java.util.logging.Level;
@@ -23,9 +24,11 @@ public class ticket extends javax.swing.JInternalFrame {
     /**
      * Creates new form ticket
      */
+    public static Instant endTimer;
     public ticket() {
         initComponents();
         autoID();
+        endTimer = Instant.now();
     }
 
     Connection con;

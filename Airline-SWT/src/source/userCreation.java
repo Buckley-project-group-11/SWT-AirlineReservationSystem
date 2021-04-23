@@ -7,6 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.Instant;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -24,9 +25,11 @@ public class userCreation extends javax.swing.JInternalFrame {
     /**
      * Creates new form userCreation
      */
+    public static Instant endTimer;
     public userCreation() {
         initComponents();
         autoID();
+        endTimer = Instant.now();
     }
     Connection con;
     PreparedStatement pst;
