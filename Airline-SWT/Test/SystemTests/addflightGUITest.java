@@ -30,7 +30,7 @@ public class addflightGUITest extends TestCase {
         JTextField departTimeTest = (JTextField) addflight.txtdtime;
         JTextField arrTimeTest = (JTextField) addflight.txtarrtime;
         JTextField chargeTest = (JTextField) addflight.txtflightcharge;
-                /*
+        /*
         Because a Swing GUI cannot be accessed during testing, the component is set to the test value manually.
         The test value for the name of the flight is within the Regex value and is expected to pass.
          */
@@ -49,6 +49,8 @@ public class addflightGUITest extends TestCase {
         //A String Array of the elements in the combo box is made to initialize the boundary.
         String[] expResult = {"India", "Srilanka", "Uk", "Usa", "Canada", "Chinna"};
         //A loop iterates through the array and adds each item to the combo box selection component.
+
+
         for (int i = 0; i < expResult.length; i++) {
             sourceTest.setSelectedItem(expResult[i]);
             departTest.setSelectedItem(expResult[i]);
@@ -75,7 +77,6 @@ public class addflightGUITest extends TestCase {
         addFlightMock.add(isHidden);
         verify(addFlightMock).add(false);
         Assert.assertFalse(isHidden);
-
     }
 
     @Test

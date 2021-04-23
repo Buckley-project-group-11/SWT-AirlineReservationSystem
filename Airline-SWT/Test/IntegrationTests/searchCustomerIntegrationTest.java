@@ -18,7 +18,6 @@ public class searchCustomerIntegrationTest {
     // Integration test
     @Test
     public void testButton1IOException() throws InterruptedException {
-
         // Create instance of the searchCustomer class
         searchCustomer search = new searchCustomer();
         search.setVisible(true);
@@ -32,38 +31,41 @@ public class searchCustomerIntegrationTest {
         }
         // Access the label used to display image
         JLabel photoText = (JLabel) search.getPhotoText();
-        // Enter an invalid input (no image path) to trigger IOException
-        // when the popup screen shows, enter photo.png in the file name then click okay.
-        // this forms an IOException
+        /*
+         Enter an invalid input (no image path) to trigger IOException
+         when the popup screen shows, enter photo.png in the file name then click okay.
+         this forms an IOException
+         */
         photoText.setText("C:/Owner/Desktop/photo.png");
-
         // Give program 2 seconds to accept text
         sleep(2000);
         // Click button1 (Browse) to attempt a search with the invalid input
         searchCustomer.jButton1.doClick();
-        // In searchCustomer IOException catch, button1IsIOExceptionThrown set to true
-        // This was work around since I wasn't able to get
-        // jButton1ActionPerformed to throw an exception for some reason
-        // If invalid input, and SQL not thrown, test fails
-        // If invalid input, and SQL thrown, test passes
+        /*
+         In searchCustomer IOException catch, button1IsIOExceptionThrown set to true
+         This was work around since I wasn't able to get
+         jButton1ActionPerformed to throw an exception for some reason
+         If invalid input, and SQL not thrown, test fails
+         If invalid input, and SQL thrown, test passes
+         */
         Boolean isIOThrown = searchCustomer.button1IsIOExceptionThrown;
-
         // Integration Testing - Mock
         List searchCustomerMock = mock(List.class);
         searchCustomerMock.add(isIOThrown);
         verify(searchCustomerMock).add(true);
-
         Assert.assertTrue(isIOThrown);
         System.out.println("Button 1 IO exception was caught");
     }
 
 
 
-    // Integration test
-    // To produce exception we need to input letters (ABC) into the contact,
-    // and hit update AFTER having searched for a VALID customer id.
-    // So basically, search for CS001, then insert ABC into the contact and hit
-    // update
+    /*
+    Integration test
+     To produce exception we need to input letters (ABC) into the contact,
+     and hit update AFTER having searched for a VALID customer id.
+     So basically, search for CS001, then insert ABC into the contact and hit
+     update
+     */
     @Test
     public void testButton2SQLException() throws InterruptedException {
         // Create instance of the searchCustomer class
@@ -76,7 +78,6 @@ public class searchCustomerIntegrationTest {
         else {
             findText.getText();
         }
-
         // Access the textfield used to search
         JTextField contactText = (JTextField) search.getContactText();
         // Enter an invalid input (letters) to trigger SQLException
@@ -85,13 +86,14 @@ public class searchCustomerIntegrationTest {
         sleep(2000);
         // Click button2 (Update) to attempt a search with the invalid input
         searchCustomer.jButton2.doClick();
-        // In searchCustomer SQLException catch, button2IsSQLThrown set to true
-        // This was work around since I wasn't able to get
-        // jButton2ActionPerformed to throw an exception for some reason
-        // If invalid input, and SQL not thrown, test fails
-        // If invalid input, and SQL thrown, test passes
+        /*
+         In searchCustomer SQLException catch, button2IsSQLThrown set to true
+         This was work around since I wasn't able to get
+         jButton2ActionPerformed to throw an exception for some reason
+         If invalid input, and SQL not thrown, test fails
+         If invalid input, and SQL thrown, test passes
+         */
         Boolean isSQLThrown = searchCustomer.button2IsSQLThrown;
-
         // Integration Testing - Mock
         List searchCustomerMock = mock(List.class);
         searchCustomerMock.add(isSQLThrown);

@@ -1,19 +1,11 @@
 package source;
 
-import com.toedter.calendar.JDateChooser;
-
-import java.awt.*;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import javax.swing.*;
+import java.sql.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.*;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -267,17 +259,6 @@ public class addflight extends javax.swing.JInternalFrame {
 
     }
 
-
-
-
-
-
-
-
-
-
-
-
     public static void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         Connection con;
@@ -322,8 +303,6 @@ public class addflight extends javax.swing.JInternalFrame {
         } catch (SQLException ex) {
             Logger.getLogger(addflight.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-
 
 
 

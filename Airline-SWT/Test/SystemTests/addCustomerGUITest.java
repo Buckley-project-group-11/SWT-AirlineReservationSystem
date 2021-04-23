@@ -4,7 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 import source.addCustomer;
 
-public class addCustomerSystemTest {
+public class addCustomerGUITest {
     private addCustomer addCustomerObj;
 
     @Before
